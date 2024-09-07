@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Philipss</title>
-    <link rel="icon" href="images/pic3.jpg" type="image/x-icon">
+    <link rel="icon" href="images/pic3.jpg" type="image/x-icon"> <!-- Favicon -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -19,10 +19,11 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: flex-end; 
-            padding-right: 20px; 
+            justify-content: center; /* Center container horizontally and vertically */
+            padding: 20px; /* Add some padding */
             overflow: hidden;
-            animation: backgroundAnimation 30s infinite alternate;
+            animation: backgroundAnimation 30s infinite alternate; /* Animation for background */
+            box-sizing: border-box; /* Ensure padding is included in width/height */
         }
         .overlay {
             position: absolute;
@@ -35,62 +36,45 @@
         }
         .container {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            justify-content: center; /* Center items horizontally */
             gap: 20px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            background: transparent; /* Make container background transparent */
             border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: none; /* Remove any box shadow */
             animation: fadeIn 2s ease-out, slideUp 1s ease-out; /* Added slide-up animation */
             transform: translateY(50px); /* Initial position for slide-up effect */
+            max-width: 90%; /* Limit width on larger screens */
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
         .box {
+            position: relative; /* Position relative to allow absolute positioning of the button */
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 15px;
-            padding: 15px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.3); /* Transparent background */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-            animation: bounceIn 1s ease; /* Added bounce-in animation */
+            width: 80px; /* Fixed size for circular effect */
+            height: 80px; /* Fixed size for circular effect */
+            border-radius: 50%; /* Make the box circular */
+            background: transparent; /* Make box background transparent */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Initial subtle shadow */
         }
         .box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.6); /* Glow effect on hover */
+            transform: scale(1.05); /* Slight zoom effect */
         }
         .box img {
-            width: 40px;
-            height: 40px;
+            width: 60px; /* Adjusted size */
+            height: 60px; /* Adjusted size */
             transition: transform 0.3s ease;
-            border-radius: 50%;
-            background-color: #fff; 
-            padding: 5px; 
+            border-radius: 50%; /* Makes the icon circular */
+            background-color: #fff; /* Optional: Adds background to make it stand out */
+            padding: 5px; /* Optional: Adds space around the icon */
         }
         .box:hover img {
             transform: scale(1.1);
-        }
-        .button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .button:hover {
-            background-color: #0056b3;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-        .button:active {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         @keyframes fadeIn {
             from {
@@ -112,19 +96,6 @@
                 transform: translateY(0);
             }
         }
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
         @keyframes backgroundAnimation {
             0% {
                 background-position: 0% 0%;
@@ -138,28 +109,32 @@
 <body>
     <div class="overlay"></div>
     <div class="container">
-        <!-- WhatsApp Box -->
+        <!-- WhatsApp Icon -->
         <div class="box">
-            <img src="images/whatsapp.png" alt="WhatsApp Logo">
-            <a href="https://chat.whatsapp.com/D5kII6nHCez6mnbzK6YxR6" class="button">Join WhatsApp Group</a>
+            <a href="https://chat.whatsapp.com/Carv3wSDMB05QIUXXLWqiB">
+                <img src="images/whatsapp.png" alt="WhatsApp Logo">
+            </a>
         </div>
         
-        <!-- Instagram Box -->
+        <!-- Instagram Icon -->
         <div class="box">
-            <img src="images/instagram.png" alt="Instagram Logo">
-            <a href="https://www.instagram.com/philipss_edits?igsh=NXIxYTJwYXg2N25m" class="button">Follow on Instagram</a>
+            <a href="https://www.instagram.com/philipss_edits?igsh=NXIxYTJwYXg2N25m">
+                <img src="images/instagram.png" alt="Instagram Logo">
+            </a>
         </div>
         
-        <!-- Facebook Box -->
+        <!-- Facebook Icon -->
         <div class="box">
-            <img src="images/facebook.png" alt="Facebook Logo">
-            <a href="https://www.facebook.com/profile.php?id=100071489112027&mibextid=ZbWKwL" class="button">Follow on Facebook</a>
+            <a href="https://www.facebook.com/profile.php?id=100071489112027&mibextid=ZbWKwL">
+                <img src="images/facebook.png" alt="Facebook Logo">
+            </a>
         </div>
         
-        <!-- YouTube Box -->
+        <!-- YouTube Icon -->
         <div class="box">
-            <img src="images/youtube.png" alt="YouTube Logo">
-            <a href="https://youtube.com/@philipssedits419?si=yux3YgBGYXVboeQS" class="button">Subscribe on YouTube</a>
+            <a href="https://youtube.com/@philipssedits419?si=yux3YgBGYXVboeQS">
+                <img src="images/youtube.png" alt="YouTube Logo">
+            </a>
         </div>
     </div>
 </body>
